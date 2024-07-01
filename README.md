@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Weather-react-widget
-=======
 # Weather widget
 
 This React "application" is a widget that displays weather information for three selected cities. It uses asynchronous API to fetch real-time weather data from open-meteo.com. 
