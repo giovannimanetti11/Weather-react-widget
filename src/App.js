@@ -36,6 +36,22 @@ const getWeatherIcon = (weathercode) => {
   }
 };
 
+// Get weather description based on weather code
+const getWeatherDescription = (weathercode) => {
+  switch (true) {
+    case weathercode === 0:
+      return 'Sunny';
+    case weathercode >= 1 && weathercode <= 3:
+      return 'Partly cloudy';
+    case (weathercode >= 45 && weathercode <= 48) || (weathercode >= 51 && weathercode <= 57) || (weathercode >= 61 && weathercode <= 67) || (weathercode >= 80 && weathercode <= 86):
+      return 'Raining';
+    case weathercode >= 95 && weathercode <= 99:
+      return 'Stormy';
+    default:
+      return 'Cloudy';
+  }
+};
+
 // Wind direction icon rotation
 const getWindDirectionStyle = (windDirection) => {
   return { transform: `rotate(${windDirection}deg)` };
@@ -114,6 +130,7 @@ function App() {
     <div className="datrix">
       <div className="left-column">
         <div className="weather-image" style={{ backgroundImage: `url(${getWeatherBackground(weather?.weathercode)})` }}>
+        <div className="weather-description">{weather ? getWeatherDescription(weather.weathercode) : 'Weather data unavailable'}</div>
           {loading ? (
             <div className="loading">
               <FontAwesomeIcon icon={faSpinner} spin size="2x" />

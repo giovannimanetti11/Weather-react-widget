@@ -46,13 +46,21 @@ body {
   border-radius: 25px;
 }
 
-.temperature {
-  font-size: 30px;
+.temperature, .weather-description {
   color: #fff0f4;
   font-weight: bold;
   position: absolute;
   text-align: center;
+}
+
+.temperature {
   top: 10px;
+  font-size: 30px;
+}
+
+.weather-description {
+  top: 40px;
+  font-size: 16px;
 }
 
 .date-time {
@@ -195,7 +203,7 @@ option {
 
 @media (max-width: 768px) {
 
-  .App {
+  .datrix {
     flex-direction: column;
     width: 100%;
   }
