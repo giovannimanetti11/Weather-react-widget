@@ -49,5 +49,3 @@ To run this project, you'll need to have Node.js installed on your machine.
     ```
 
     The application will run on the default port :3000
-
->>>>>>> 2d0168b (Initial commit)
